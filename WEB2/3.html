@@ -3,35 +3,41 @@
 <head>
   <title>WEB1 - JavaScript</title>
   <meta charset="utf-8">
+  <script>
+    function nightDayHandler(self){
+      var target = document.querySelector('body');
+      if(self.value === 'night') {
+        target.style.backgroundColor = 'black';
+        target.style.color = 'white';
+        self.value = 'day';
+
+        var alist = document.querySelectorAll('a');
+        var i = 0;
+        while(i < alist.length) {
+          alist[i].style.color = 'powderblue';
+          i = i + 1;
+        }
+      } else {
+        target.style.backgroundColor = 'white';
+        target.style.color = 'black';
+        self.value = 'night';
+
+        var alist = document.querySelectorAll('a');
+        var i = 0;
+        while(i < alist.length) {
+          alist[i].style.color = 'blue';
+          i = i + 1;
+        }
+      }
+  }
+  </script>
 </head>
 <body>
   <h1><a href="index.html">WEB</a></h1>
 
+  <!--함수사용-->
   <input type="button" value="night" onclick="
-  var target = document.querySelector('body');
-  if(this.value === 'night') {
-    target.style.backgroundColor = 'black';
-    target.style.color = 'white';
-    target.value = 'day';
-
-    var alist = document.querySelectorAll('a');
-    var i = 0;
-    while(i < alist.length) {
-      alist[i].style.color = 'powderblue';
-      i = i + 1;
-    }
-  } else {
-    target.style.backgroundColor = 'white';
-    target.style.color = 'black';
-    target.value = 'night';
-
-    var alist = document.querySelectorAll('a');
-    var i = 0;
-    while(i < alist.length) {
-      alist[i].style.color = 'blue';
-      i = i + 1;
-    }
-  }
+    nightDayHandler(this);
   ">
 
   <ol>
