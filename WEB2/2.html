@@ -3,22 +3,18 @@
 <head>
   <title>WEB1 - CSS</title>
   <meta charset="utf-8">
+  <script 
+  src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="colors.js"></script>
 </head>
 <body>
   <h1><a href="index.html">WEB</a></h1>
-
-  <!--방법2 / if-else문-->
-  <input id="night_day" type="button" value="night" onclick="
-  if(document.querySelector('#night_day').value === 'night') {
-    document.querySelector('body').style.backgroundColor = 'black';
-    document.querySelector('body').style.color = 'white';
-    document.querySelector('#night_day').value = 'day';
-  } else {
-    document.querySelector('body').style.backgroundColor = 'white';
-    document.querySelector('body').style.color = 'black';
-    document.querySelector('#night_day').value = 'night';
-  }
+  
+  <!--함수사용-->
+  <input type="button" value="night" onclick="
+    nightDayHandler(this);
   ">
+  
   <ol>
     <li><a href="1.html">HTML</a></li>
     <li><a href="2.html">CSS</a></li>
@@ -30,3 +26,16 @@
   </p>
 </body>
 </html>
+
+<!--방법2 / if-else문-->
+<!-- <input id="night_day" type="button" value="night" onclick="
+if(document.querySelector('#night_day').value === 'night') {
+  document.querySelector('body').style.backgroundColor = 'black';
+  document.querySelector('body').style.color = 'white';
+  document.querySelector('#night_day').value = 'day';
+} else {
+  document.querySelector('body').style.backgroundColor = 'white';
+  document.querySelector('body').style.color = 'black';
+  document.querySelector('#night_day').value = 'night';
+}
+"> -->
