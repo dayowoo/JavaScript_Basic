@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function fn(person) {
+        //     person = Object.assign({}, person);
+        //     person.name = 'lee';
+        //     return person;
+        // }
+        // var o1 = {name: 'kim'}
+        // // immutable ver
+        // var o2 = fn(o1);
+        // console.log(o1, o2);        // 원본과 복제본을 출력
+
+        function fn(person) {
+            person.name = 'lee';
+        }
+        var o1 = {name: 'kim'}
+        // immutable ver
+        var o2 = Object.assign({}, o1);
+        fn(o2);
+        console.log(o1, o2);        // 원본과 복제본을 출력
+
+
+        /*
+        // mutable ver
+        // var person = o1;
+        // person.name = 'lee';
+
+        fn(o1);
+        console.log(o1);        // 'lee'
+        */
+    </script>
+</body>
+</html>
