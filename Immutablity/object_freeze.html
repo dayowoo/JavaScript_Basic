@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var o1 = {name:'kim', score:[1,2]}
+        // o1.name = 'lee';
+        // console.log(o1);    // {name:'lee', score:[1,2]}
+
+        var o1 = {name:'kim', score:[1,2]}
+        Object.freeze(o1);     // 객체의 프로퍼티를 얼리기, freeze푸는 명령어 없음, 풀고싶다? 복제해야함.
+        o1.name = 'lee';
+        o1.city = 'seoul';     // 없던 프로퍼티도 추가 불가능, 프로퍼티 값이 객체면 불가능
+        o1.sore.push(3);       // push는 가능 :  
+        console.log(o1);       // {name:'kim', score:[1,2,3]}
+    </script>
+</body>
+</html>

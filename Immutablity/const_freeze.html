@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // const: 값을 얼리는 것 vs freeze: 이름을 규제하는 것
+
+        // const o1 = {name:'kim'}
+        var o1 = {name:'kim'}
+        Object.freeze(o1);
+        const o2 = {name:'lee'}
+        // o1 = o2;                    //const: 에러 발생, var: 에러x
+        o1.name = 'park';
+        console.log(o1);               //const: 에러발생, var: 에러x
+    </script>
+</body>
+</html>
