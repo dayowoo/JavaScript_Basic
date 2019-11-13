@@ -153,7 +153,7 @@ console.log(Boolean({}));           // true
 
 // ex 3-4 | Array
 
-
+/*
 var array1 = [1, 2, 3];
 var array2 = new Array(1, 2);
 
@@ -190,3 +190,49 @@ array3 = new Array(4, 2, 1, 3, 0);
 
 console.log(array3.sort());
 // [0, 1, 2, 3, 4]
+*/
+
+
+
+//--------------------------------------------------
+// ex 4 | 조건문
+
+// ex 4-1 | 조건문 - if, else
+/*
+var a = 3;
+var result = '';
+
+if(a > 2){
+    result = 'a is greater than2';
+}
+else if(a == 2){
+    result = 'a is 2';
+}
+else{
+    result = 'a is smaller than 2 ';
+}
+
+console.log(result);
+*/
+
+
+
+// ex 4-2 | 조건문 - switch
+// 논리연산이 아닌 값의 동일 여부로 분기를 나눔
+
+var a = 1;
+var result = '';
+
+switch(a) { 
+    case 1:
+        result = 'Numver 1';
+        break;
+    case 2:
+        result = 'Number 2';
+        break;
+    default:
+        result = 'i dont know what number';
+    break;
+}
+
+console.log(result);
