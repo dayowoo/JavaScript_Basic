@@ -290,6 +290,7 @@ console.log(i);
 
 // ex 5-4 | do-while
 // 최소한 do는 실행
+/*
 var i = 0; 
 
 do {
@@ -297,3 +298,168 @@ do {
 } while (i < 10)
   
 console.log(i)      // 10
+*/
+
+
+
+// ex 6 | 함수
+
+
+// ex 6-1 | 데이터로써의 함수 - 함수가 하나의 데이터로서 취급된다.
+/*
+function sum(a,b){
+    var c = a + b;
+    return 0;
+}
+console.log((sum(2,3)));        //5
+*/
+
+// ex 6-1 | delete
+/*
+function sum(a, b) {
+    var c = a + b;
+    return 0;
+}
+
+var add = sum;
+typeof add;             //function
+
+add(1,2);               //3
+
+var student = {
+    name : 'goorm',
+    age : 20
+}
+
+console.log(student.name);      //goorm
+delete student.name;            //true -> 객체 속성(name)삭제 
+
+console.log(student.name);      //undifened
+
+delete student;                 //false : 객체 자체 삭제불가
+delete not_exist;               //true : 아예 없는 속성 삭제
+
+console.log(student.age);       //20
+*/
+
+
+// ex 6-3 | 익명함수(Anonymous Funtion)
+/*
+var f = function (a) {
+    return "This is anonymous function!"; 
+  };
+  
+console.log(f());         // "This is anonymous function!"
+*/
+
+
+// ex 6-4 | 콜백 함수(Callback Function)
+/*
+function one() {
+     return 1;
+}
+
+var two = function() {
+    return 2;
+}
+function invoke_and_add(a, b){
+    return a() + b();
+}
+console.log(invoke_and_add(one, two));      //3
+*/
+
+/*
+function one() {
+    return 1;
+}
+function invoke_and_add(a,b){
+    return a() + b();
+}
+invoke_and_add(one, function(){
+    return 2;
+})              //3
+*/
+
+
+// ex 7 | 객체지향 자바스크립트
+
+// ex 7-1 | 객체의 속성 (Property)
+/*
+var park_ji_sung = { 
+	name: "Park Ji Sung",
+	height: 178,
+	weight: 70,
+	position: "RW",
+	team : "Queen’s Park Rangers"
+};
+
+console.log(park_ji_sung.team);
+// "Queen’s Park Rangers"
+*/
+
+
+// ex 7-2 | 클래스
+/*
+var SoccerPlayer = function () { };
+
+SoccerPlayer.prototype = {
+    name: String,
+    age: Number,
+    height: Number,
+    weight: Number,
+    position: String,
+    team: String
+};
+
+var park_ji_sung = new SoccerPlayer();
+
+park_ji_sung.name = "Park Ji Sung";
+park_ji_sung.age = 31;
+park_ji_sung.height = 178;
+park_ji_sung = 70;
+
+console.log(park_ji_sung);
+// { name: 'Park Ji Sung', age:31, height: 178, weight: 70}
+*/
+
+
+// ex 7-3 | 캡슐화
+// public, private, protected
+
+// ex 7-4 | 집합 (Aggreagation)
+// 구성(Composition)
+
+
+// ex 7-5 | 상속
+
+function Man() {
+    this.name = "Anonymous";
+    this.gender = "Man";
+    this.Run = function () {
+        return this.name + " is running!";
+    }
+    this.Sleep = function () {
+        return this.name + " is sleeping!";
+    }
+}
+
+function SoccerPlayer () {
+    this.base = new Man();
+    this.name = "Anonymous Soccer Player";
+    this.Run = function () {
+        return this.base.Run();
+    }
+    this.Pass = function () {
+        return this.name + "is passing to other player!";
+    }
+}
+
+SoccerPlayer.prototype = new Man();
+var player = new SoccerPlayer ();
+
+console.log(player.name);
+console.log(player.gender);
+
+console.log(player.Run());
+console.log(player.Pass());
+console.log(player.Sleep());
