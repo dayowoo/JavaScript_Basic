@@ -431,7 +431,7 @@ console.log(park_ji_sung);
 
 
 // ex 7-5 | 상속
-
+/*
 function Man() {
     this.name = "Anonymous";
     this.gender = "Man";
@@ -463,3 +463,60 @@ console.log(player.gender);
 console.log(player.Run());
 console.log(player.Pass());
 console.log(player.Sleep());
+*/
+
+
+// ex 8 | 컨스트럭터 (생성자)
+
+// ex 8-1 | 생성자 함수(Constructor Function)
+
+// 객체 생성하는 방법
+/*
+function SoccerPlayer() { 
+    this.position = "Forward";
+  }
+  var VanPersie = new SoccerPlayer();
+  VanPersie.position;
+  // "Forward"
+*/
+
+// 초기값을 전달하여 생성가능
+/*
+function SoccerPlayer(name, position) { 
+    this.name = name;                           //속성1
+    this.position = position;                   //속성2
+    this.whatIsYourName = function () {         //메소드1
+      return "My name is " + this.name;
+    };
+    this.whatIsYourPosition = function () {     //메소드2
+      return "My position is " + this.position;
+  }; }
+*/
+
+// ex 8-1 | 새로운 객체를 생성하고 메소드 실행하기
+
+var player = new SoccerPlayer("Park Ji Sung", "Wing Forward");
+
+player.whatIsYourName();
+// "My name is Park Ji Sung"
+
+player.whatIsYourPosition();
+// "My position is Wing Forward"
+
+player.constructor;
+// Function: SoccerPlayer
+
+function SoccerPlayer(name, position) { 
+  this.name = name;
+  this.position = position; 
+  this.whatIsYourName = function () {
+    return 'My name is ' + this.name;
+  };
+  this.wahtIsYourPosition = function () { 
+	return 'My position is ' + this.position;
+  }; 
+}
+
+var player2 = new player.constructor("Koo Ja Cheol");
+player2.name;
+// "Koo Ja Cheol"
