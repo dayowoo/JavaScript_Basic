@@ -618,6 +618,9 @@ foo();
 
 // ex 10 | 클로저
 
+// 자신의 고유 스코프를 가진 상태로 소멸하지 않고 외부함수에 의해 호출되는 함수를 만드는 것
+
+// ex 10-1
 /*
 var num = 1;
 
@@ -634,6 +637,8 @@ var baz = foo();
 baz();      //2
 */
 
+
+// ex 10-2
 /*
 function f(arg) {
 	var n = function() {
@@ -647,19 +652,8 @@ var m = f(123);
 console.log(m());           //124
 */
 
-/*
-function f(arg) {
-	var n = function() {
-		return arg; 
-	}
-	arg++;
-	return n; 
-}
 
-var m = f(123); 
-console.log(m());       //124
-*/
-
+// ex 10-3
 /*
 function f() {
     var a = [];
@@ -680,6 +674,8 @@ function f() {
   console.log( b[2]() );        //3
 */
 
+
+// ex 10-4
 /*
 function f() {
     var a = [];
