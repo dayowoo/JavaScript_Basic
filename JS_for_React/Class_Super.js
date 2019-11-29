@@ -29,6 +29,7 @@ myLion.printAnimal()
 // Class & Super Quiz
 
 class Timer extends React.Component {
+    // props 는 React.Component의 input
     constructor(props) {
         super(props);
         this.state = { seconds: 0};
